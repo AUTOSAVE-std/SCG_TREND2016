@@ -108,39 +108,38 @@ four = distance;
   digitalWrite(LEDPin, HIGH); 
  }
  else {
-   Serial.println('W');
-   Serial.println(tree);
+   Serial.println('w'+(char)tree);
    digitalWrite(LEDPin, LOW); 
  }
-  if (four >= maximumRange || four <= minimumRange){
-  digitalWrite(LEDPin, HIGH); 
- }
- else {
-   Serial.println('Q');
-   Serial.println(four);
-   digitalWrite(LEDPin, LOW); 
- }
- 
- if (one >= maximumRange || one <= minimumRange){
-  digitalWrite(LEDPin, HIGH); 
- }
- else {
-   Serial.println('R');
-   Serial.println(one);
-   digitalWrite(LEDPin, LOW); 
- }
-  if (two >= maximumRange || two <= minimumRange){
-  digitalWrite(LEDPin, HIGH); 
- }
- else {
-   Serial.println('E');
-   Serial.println(two);
-   digitalWrite(LEDPin, LOW); 
- }
+//  if (four >= maximumRange || four <= minimumRange){
+//  digitalWrite(LEDPin, HIGH); 
+// }
+// else {
+//   Serial.println('Q');
+//   Serial.println(four);
+//   digitalWrite(LEDPin, LOW); 
+// }
+// 
+// if (one >= maximumRange || one <= minimumRange){
+//  digitalWrite(LEDPin, HIGH); 
+// }
+// else {
+//   Serial.println('R');
+//   Serial.println(one);
+//   digitalWrite(LEDPin, LOW); 
+// }
+//  if (two >= maximumRange || two <= minimumRange){
+//  digitalWrite(LEDPin, HIGH); 
+// }
+// else {
+//   Serial.println('E');
+//   Serial.println(two);
+//   digitalWrite(LEDPin, LOW); 
+// }
 
  
  //Delay 100ms before next reading.
- delay(0);
+ delay(500);
 }
 
 
