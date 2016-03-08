@@ -91,50 +91,56 @@ four = distance;
 // distance2 = duration2/58.2;
 // distance3 = duration3/58.2;
  
- if (distance >= maximumRange || distance <= minimumRange){
- /* Send a negative number to computer and Turn LED ON 
- to indicate "out of range" */
- digitalWrite(LEDPin, HIGH); 
- }
- else {
- /* Send the distance to the computer using Serial protocol, and
- turn LED OFF to indicate successful reading. */
- Serial.println('g'+distance);
- digitalWrite(LEDPin, LOW); 
- }
+// if (distance >= maximumRange || distance <= minimumRange){
+// /* Send a negative number to computer and Turn LED ON 
+// to indicate "out of range" */
+// digitalWrite(LEDPin, HIGH); 
+// }
+// else {
+// /* Send the distance to the computer using Serial protocol, and
+// turn LED OFF to indicate successful reading. */
+// Serial.println('g'+distance);
+// digitalWrite(LEDPin, LOW); 
+// }
 
 // MODEL START ________________________________
-// if (distance1 >= maximumRange || distance1 <= minimumRange){
-//  digitalWrite(LEDPin, HIGH); 
-// }
-// else {
-//   Serial.println('r'+distance1);
-//   digitalWrite(LEDPin, LOW); 
-// }
-//
-//
-// 
-//  if (distance2 >= maximumRange || distance2 <= minimumRange){
-//  digitalWrite(LEDPin, HIGH); 
-// }
-// else {
-//   Serial.println('e'+distance2);
-//   digitalWrite(LEDPin, LOW); 
-// }
-//
-//
-// 
-//  if (distance3 >= maximumRange || distance3 <= minimumRange){
-//  digitalWrite(LEDPin, HIGH); 
-// }
-// else {
-//   Serial.println('s'+distance3);
-//   digitalWrite(LEDPin, LOW); 
-// }
+  if (tree >= maximumRange || tree <= minimumRange){
+  digitalWrite(LEDPin, HIGH); 
+ }
+ else {
+   Serial.println('W');
+   Serial.println(tree);
+   digitalWrite(LEDPin, LOW); 
+ }
+  if (four >= maximumRange || four <= minimumRange){
+  digitalWrite(LEDPin, HIGH); 
+ }
+ else {
+   Serial.println('Q');
+   Serial.println(four);
+   digitalWrite(LEDPin, LOW); 
+ }
  
+ if (one >= maximumRange || one <= minimumRange){
+  digitalWrite(LEDPin, HIGH); 
+ }
+ else {
+   Serial.println('R');
+   Serial.println(one);
+   digitalWrite(LEDPin, LOW); 
+ }
+  if (two >= maximumRange || two <= minimumRange){
+  digitalWrite(LEDPin, HIGH); 
+ }
+ else {
+   Serial.println('E');
+   Serial.println(two);
+   digitalWrite(LEDPin, LOW); 
+ }
+
  
  //Delay 100ms before next reading.
- delay(100);
+ delay(0);
 }
 
 
