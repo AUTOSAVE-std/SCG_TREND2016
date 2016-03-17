@@ -1,17 +1,21 @@
  
 
-
+//AAAAAAAAAAAAAAAAAAAAAAAAAAAA
 #define echoPin 2 // Echo Pin
 #define trigPin 3 // Trigger Pin
 
+//BBBBBBBBBBBBBBBBBBBBBBBBBBBB
 #define echoPin1 4 // Echo Pin
 #define trigPin1 5 // Trigger Pin
 
+//CCCCCCCCCCCCCCCCCCCCCCCCCCCC
 #define echoPin2 6 // Echo Pin
 #define trigPin2 7 // Trigger Pin
 
+//DDDDDDDDDDDDDDDDDDDDDDDDDDDDD
 #define echoPin3 8 // Echo Pin
 #define trigPin3 9 // Trigger Pin
+
 
 #define LEDPin 13 // Onboard LED
 
@@ -45,6 +49,9 @@ int AUTOSAVEsensor(int xtrigPin, int xechoPin) {
  digitalWrite(xtrigPin, LOW);
  int xduration = pulseIn(xechoPin, HIGH);
  int xdistance = xduration/58.2;
+ if (xdistance >= maximumRange || xdistance <= minimumRange) {
+  xdistance = 0;
+ }
  return xdistance;
 }
 
@@ -60,50 +67,68 @@ tree = AUTOSAVEsensor(trigPin2,echoPin2);
 
 four = AUTOSAVEsensor(trigPin3,echoPin3);
 
-
+if(one+two+tree+four != 0) {
+  Serial.print(one,DEC);
+  Serial.print(",");
+  Serial.print(two,DEC);
+  Serial.print(",");
+  Serial.print(tree,DEC);
+  Serial.print(",");
+  Serial.print(four,DEC);
+  Serial.print("|");
+  digitalWrite(LEDPin, LOW); 
+}
 
 // MODEL START ________________________________
- //WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
-  if (tree >= maximumRange || tree <= minimumRange){
-  isLED = true;
- }
- else {
-   Serial.println('W');
-   Serial.println(tree);
-   digitalWrite(LEDPin, LOW); 
- }
- //QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
-  if (four >= maximumRange || four <= minimumRange){
-  isLED = true;
- }
- else {
-   Serial.println('Q');
-   Serial.println(four);
-   digitalWrite(LEDPin, LOW); 
- }
- 
- //RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
- if (one >= maximumRange || one <= minimumRange){
-  isLED = true;
- }
- else {
-   Serial.println('R');
-   Serial.println(one);
-   digitalWrite(LEDPin, LOW); 
- }
- //EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-  if (two >= maximumRange || two <= minimumRange){
-  isLED = true;
- }
- else {
-   Serial.println('E');
-   Serial.println(two);
-   digitalWrite(LEDPin, LOW); 
- }
+//AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+//  if (one >= maximumRange || one <= minimumRange){
+//  isLED = true;
+// }
+// else {
+//   Serial.println('A');
+//   Serial.println(one);
+//   Serial.println('|');
+//   digitalWrite(LEDPin, LOW); 
+// }
 
- if(isLED) {
+//BBBBBBBBBBBBBBBBBBBBBBBBBBBB
+//  if (two >= maximumRange || two <= minimumRange){
+//  isLED = true;
+// }
+// else {
+//   Serial.println('B');
+//   Serial.println(two);
+//   Serial.println('|');
+//   digitalWrite(LEDPin, LOW); 
+// }
+ 
+//CCCCCCCCCCCCCCCCCCCCCCCCCCCC
+// if (tree >= maximumRange || tree <= minimumRange){
+//  isLED = true;
+// }
+// else {
+//   Serial.println('C');
+//   Serial.println(tree);
+//   Serial.println('|');
+//   digitalWrite(LEDPin, LOW); 
+// }
+
+//DDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+//  if (four >= maximumRange || four <= minimumRange){
+//  isLED = true;
+// }
+// else {
+//   Serial.println('D');
+//   Serial.println(four);
+//   Serial.println('|');
+//   digitalWrite(LEDPin, LOW); 
+// }
+
+
+ 
+
    digitalWrite(LEDPin, HIGH); 
- }
+ 
 
  
  //Delay 100ms before next reading.
