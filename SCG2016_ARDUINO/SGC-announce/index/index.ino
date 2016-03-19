@@ -25,7 +25,7 @@ long one, two, tree, four;
 
 bool isLED;
 void setup() {
- Serial.begin (9600);
+ Serial.begin (9611);
  pinMode(trigPin, OUTPUT);
  pinMode(echoPin, INPUT);
  
@@ -61,13 +61,11 @@ isLED = false;
 
 one = AUTOSAVEsensor(trigPin,echoPin);
 
-//two = AUTOSAVEsensor(trigPin1,echoPin1);
-two = 0;
+two = AUTOSAVEsensor(trigPin1,echoPin1);
 
 tree = AUTOSAVEsensor(trigPin2,echoPin2);
 
-four =0;
-//four = AUTOSAVEsensor(trigPin3,echoPin3);
+four = AUTOSAVEsensor(trigPin3,echoPin3);
 
 if(one+two+tree+four != 0) {
   Serial.print(one,DEC);
@@ -81,50 +79,7 @@ if(one+two+tree+four != 0) {
   digitalWrite(LEDPin, LOW); 
 }
 
-// MODEL START ________________________________
-//AAAAAAAAAAAAAAAAAAAAAAAAAAAA
-//  if (one >= maximumRange || one <= minimumRange){
-//  isLED = true;
-// }
-// else {
-//   Serial.println('A');
-//   Serial.println(one);
-//   Serial.println('|');
-//   digitalWrite(LEDPin, LOW); 
-// }
 
-//BBBBBBBBBBBBBBBBBBBBBBBBBBBB
-//  if (two >= maximumRange || two <= minimumRange){
-//  isLED = true;
-// }
-// else {
-//   Serial.println('B');
-//   Serial.println(two);
-//   Serial.println('|');
-//   digitalWrite(LEDPin, LOW); 
-// }
- 
-//CCCCCCCCCCCCCCCCCCCCCCCCCCCC
-// if (tree >= maximumRange || tree <= minimumRange){
-//  isLED = true;
-// }
-// else {
-//   Serial.println('C');
-//   Serial.println(tree);
-//   Serial.println('|');
-//   digitalWrite(LEDPin, LOW); 
-// }
-
-//DDDDDDDDDDDDDDDDDDDDDDDDDDDDD
-//  if (four >= maximumRange || four <= minimumRange){
-//  isLED = true;
-// }
-// else {
-//   Serial.println('D');
-//   Serial.println(four);
-//   Serial.println('|');
-//   digitalWrite(LEDPin, LOW); 
-// }
 
 
  
@@ -134,7 +89,7 @@ if(one+two+tree+four != 0) {
 
  
  //Delay 100ms before next reading.
- delay(100);
+ delay(500);
 }
 
 
